@@ -1,0 +1,11 @@
+name: ${project.name}
+version: ${project.version}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+description: |
+    ${project.description}
+commands:
+  rankup:
+     description: Rankup
+     usage: /<command>
+     aliases:
+     - ranks

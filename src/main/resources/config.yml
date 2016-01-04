@@ -1,0 +1,25 @@
+rankups:
+    C:
+      icon: STONE
+      requirements:
+        "1":
+            type: org.stevenw.prison.rankup.requirements.RequirementGroup
+            value: D
+            material: DIRT
+        "2":
+            type: org.stevenw.prison.rankup.requirements.RequirementMoney
+            value: 25000
+        "3":
+            type: org.stevenw.prison.rankup.requirements.RequirementItem
+            value:
+                type: COAL
+                amount: 12
+    B:
+      icon: ICE
+      requirements:
+        "1":
+            type: org.stevenw.prison.rankup.requirements.RequirementGroup
+            value: C
+        "2":
+            type: org.stevenw.prison.rankup.requirements.RequirementMoney
+            value: 45000

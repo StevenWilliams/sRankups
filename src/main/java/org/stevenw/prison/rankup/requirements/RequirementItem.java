@@ -1,6 +1,7 @@
 package org.stevenw.prison.rankup.requirements;
 
-import net.milkbowl.vault.item.Items;
+//import net.milkbowl.vault.item.Items;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -41,7 +42,7 @@ public class RequirementItem extends RankupRequirement {
 
     @Override
     public String getName(Player player) {
-        return item.getAmount() + " " + Items.itemByStack(item).getName();
+        return item.getAmount() + " " + item.getItemMeta().getDisplayName();
     }
     @Override
     public List<String> getDescription(Player player){

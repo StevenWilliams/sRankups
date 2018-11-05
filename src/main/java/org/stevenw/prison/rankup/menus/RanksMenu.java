@@ -7,7 +7,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.stevenw.prison.rankup.Rank;
 import org.stevenw.prison.rankup.sRankup;
 
@@ -17,7 +16,7 @@ public class RanksMenu extends ItemMenu{
     public RanksMenu(sRankup plugin, Player player) {
         super("Rankup", Size.FOUR_LINE, plugin);
         CloseItem close = new CloseItem();
-        close.setNameAndLore(new ItemStack(Material.FENCE_GATE, 1), ChatColor.RED + "Close", null); //TODO: not changing
+        close.setNameAndLore(new ItemStack(Material.ACACIA_FENCE_GATE, 1), ChatColor.RED + "Close", null); //TODO: not changing
         setItem(0, close);
         int i = 18;
         List<Rank> ranks =  plugin.getRanks();

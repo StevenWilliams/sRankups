@@ -1,10 +1,11 @@
 package org.stevenw.prison.rankup;
 
-import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.stevenw.prison.rankup.commands.RankupCommand;
+import org.stevenw.prison.rankup.economy.Economy;
+import org.stevenw.prison.rankup.economy.VulcanEconomyConnector;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,7 @@ public class sRankup extends JavaPlugin {
             ranks.add(new Rank(this, rank));
         }
         getCommand("rankup").setExecutor(new RankupCommand(this));
+
     }
 
     public List<Rank> getRanks() {
@@ -37,6 +39,7 @@ public class sRankup extends JavaPlugin {
     }
 
     private boolean setupEconomy() {
+        /*
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
             return false;
         }
@@ -45,7 +48,13 @@ public class sRankup extends JavaPlugin {
             return false;
         }
         econ = rsp.getProvider();
-        return econ != null;
+        return econ != null;*/
+        if (getServer().getPluginManager().getPlugin("VulcanEconomy") == null) {
+            return false;
+        } else {
+            this.econ = new VulcanEconomyConnector(this); //new VaultEconomy(this);
+            return true;
+        }
     }
     private boolean setupPermissions() {
         RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);

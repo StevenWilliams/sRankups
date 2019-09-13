@@ -73,7 +73,7 @@ public class Rank {
         for(RankupRequirement requirement : requirements.values()) {
             requirement.rankup(player);
         }
-        plugin.getPermissions().playerAddGroup(player, rank);
+        plugin.getPermissions().playerAddGroup(null, player, rank);
     }
 
     public boolean has(Player player) {

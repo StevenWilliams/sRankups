@@ -15,12 +15,12 @@ import java.util.List;
 public class RequirementMoney extends RankupRequirement{
     private final ConfigurationSection section;
     private final sRankup plugin;
-    private final double amount;
+    private final long amount;
     public RequirementMoney(sRankup plugin, ConfigurationSection section) {
         super(plugin, section);
         this.section = section;
         this.plugin = plugin;
-        this.amount = section.getDouble("value");
+        this.amount = section.getLong("value");
     }
     @Override
     public String getType() {
@@ -29,7 +29,7 @@ public class RequirementMoney extends RankupRequirement{
 
     @Override
     public boolean isFulfilled(Player player) {
-        return plugin.getEconomy().getBalance(player) >= amount;
+        return plugin.getEconomy().has(player, amount);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class RequirementMoney extends RankupRequirement{
 
     @Override
     public void rankup(Player player) {
-        plugin.getEconomy().withdrawPlayer(player, amount);
+        plugin.getEconomy().withdraw(player, amount);
     }
 
     @Override
